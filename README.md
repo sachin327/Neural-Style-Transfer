@@ -1,1 +1,4 @@
-It is a ML project.That detect blinking of your eyes.It has been trained using Convolutional Neural Network.
+Neural Style Transfer
+
+To run this code you have to download 'imagenet-vgg-verydeep-19.mat' from this link:
+and paste this file to 'pretrained-model' folder.
