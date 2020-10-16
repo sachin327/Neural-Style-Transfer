@@ -8,6 +8,6 @@ and extract the zip file to 'pretrained-model' folder.
 +
 =
 ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/d6.jpg)
-'='
+'=' 
 ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/generated_image.jpg)
 
