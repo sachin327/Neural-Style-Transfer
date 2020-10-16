@@ -9,5 +9,5 @@ The result will look like this
  
 ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/d4.jpg) + ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/d6.jpg) = ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/generated_image.jpg)
 
-    content_image                         +             style_image         =       generated imaeg
+  content_image +  style_image = generated imaeg
 
