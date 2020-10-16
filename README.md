@@ -11,38 +11,34 @@ The result will look like this
 
 content_image   +   style_image     =   generated image
 
+# Architecture
+
+  ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/neural%20network%20arcitecture.jpeg)
   
 Loss function
 =
 
 # 1. content loss:
 
-  a_C -- tensor of dimension (1, n_H, n_W, n_C), hidden layer activations representing content of the image C 
-  
-  
-  a_G -- tensor of dimension (1, n_H, n_W, n_C), hidden layer activations representing content of the image G
- 
-  J_content = 1/(4*n_H*n_W*n_C) *tf.reduce_sum((a_C - a_G)**2)
+  ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/content_loss.png)
   
 # 2.style loss
 
-  a_S -- tensor of dimension (1, n_H, n_W, n_C), hidden layer activations representing style of the image S 
-  
-  
-  a_G -- tensor of dimension (1, n_H, n_W, n_C), hidden layer activations representing style of the image G
-  
-  
-  GS = gram_matrix(a_S)
-  GG = gram_matrix(a_G)
-
-  
-  J_style_layer = 1/(4*((n_H*n_W)**2)*(n_C**2)) *tf.reduce_sum((GS - GG)**2)
+  ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/style%20loss.png)
 
 # where gram_matrix is being calculated by 
 
-  GA = tf.matmul(A, A, transpose_b=True)
+  ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/gram_matrix.png)
 
 # 3. Total loss
 
-  J = alpha*J_content+ beta*J_style
+  ![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/total%20loss.png)
 
+
+# Why we have used gram matrix in style loss
+It’s great that we know how to compute the style loss. But you still haven’t been shown “why the style loss is computed using the Gram matrix”. The Gram matrix essentially captures the “distribution of features” of a set of feature maps in a given layer. By trying to minimise the style loss between two images, you are essentially matching the distribution of features between the two images.
+  
+
+So let me take a shot at explaining this a bit more intuitively. Say you have the following feature maps. For simplicity I assume only three feature maps, and two of them are completely inactive. You have one feature map set where the first feature map looks like a dog, and in the second feature map set, the first feature map looks like a dog upside down. Then if you try to manually compute content and style losses, you will get these values. This means that we haven’t lost style information between two feature map sets. However, the content is quite different.
+
+![alt text](https://github.com/sachin327/Neural-Style-Transfer/blob/master/why.png)
