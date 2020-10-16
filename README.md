@@ -5,4 +5,5 @@ and extract the zip file to 'pretrained-model' folder.
 
   
   
- ![alt text] (https://github.com/sachin327/Handwritting-digit-recognizer/blob/master/0.jpg)
+![alt text] (https://github.com/sachin327/Handwritting-digit-recognizer/blob/master/0.jpg)
+![alt text](http://url/to/img.png)
